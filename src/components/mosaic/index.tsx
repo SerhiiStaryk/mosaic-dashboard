@@ -25,9 +25,6 @@ import { MosaicAppState } from '../../interfaces';
 import { MOSAIC_STATE, THEMES } from '../../constants';
 import { fetchFromServer, uniqId } from '../../helpers';
 
-import { Classes } from '@blueprintjs/core';
-
-
 const MosaicComponent: React.FC = () => {
   const [mosaicState, setMosaicState] = useState<MosaicAppState>(MOSAIC_STATE);
 
