@@ -3,16 +3,8 @@ import { Companies, Company, OptionForSelect, OptionsForSelect, OptionsObject } 
 const fetchFromServer = (url: string) => async () => {
   const response = await fetch(url);
 
-  if (!response.ok) {
-    throw new Error('Failed to fetch user places');
-  }
-
   return await response.json();
 };
-
-const getDataFromLocalStorage = (key: string) => localStorage.getItem(key);
-
-const setDataToLocalStorage = (key: string, data: unknown) => localStorage.setItem(key, JSON.stringify(data));
 
 const arrToObject = (arr: Companies, key: keyof Company): Record<string, Company> =>
   arr.reduce((acc: Record<string, Company>, item: Company) => {
@@ -40,4 +32,4 @@ const createOptions = (obj: OptionsObject): OptionsForSelect => {
 
 const uniqId = () => Math.floor(Math.random() * 1000);
 
-export { uniqId, arrToObject, createOptions, fetchFromServer, setDataToLocalStorage, getDataFromLocalStorage };
+export { uniqId, arrToObject, createOptions, fetchFromServer };
